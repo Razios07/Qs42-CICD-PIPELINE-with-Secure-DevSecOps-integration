@@ -53,4 +53,11 @@ error "deployments verification failed with HTTP status $status"
 }
 }
 }
-
+post{
+failure{
+mail to :"Devteam@mail.com"
+subject : Pipeline Failed : ${currentBuild.fullDisplayName}",
+body: "Pipeline ${ env.JOB_Name}.checking for jenkins details."
+}
+}
+}
